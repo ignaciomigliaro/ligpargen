@@ -35,6 +35,12 @@ LigParGen requires the free BOSS software to generate the OPLSAA parameters.
 
 BOSS is compiled for linux using 32 bits libraries so it can not run in windows using WSL. Alternatively, you can use a virtual machine in windows such as virtualBox to install a linux distro (ubuntu, centos, ...) and run LigParGen.
 
+```bash
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install libc6:i386 libstdc++6:i386
+```
+
 1.1 - Set the BOSSdir enviromental variable:
 
   - bashrc
