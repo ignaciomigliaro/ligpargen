@@ -4,3 +4,24 @@ ligpargen/inout/__pycache__/
 ligpargen/tools/__pycache__/
 LigPargen.egg-info/
 test_ligpargen/__pycache__/
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore local test outputs
+*.pdb
+*.z
+*.log
+*.par
+optzmat
+phenol/
+test_ligpargen/*.z
+test_ligpargen/*.log
+test_ligpargen/*.pdb
+
+# Editor and cache junk
+__pycache__/
+*.pyc
+
+bosscmd
