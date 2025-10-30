@@ -680,8 +680,7 @@ class Molecule(object):
         TorsionsAdditional = []
 
         for i,torsionF in enumerate(TorsionsFile):
-            if len(torsionF) < 5 or not torsionF[0].isdigit():
-                continue
+
             if i < len(zmatTorsionInfoVariables):
 
                 atom = atoms[serial2IndexAtoms[int(torsionF[1])]]
@@ -700,14 +699,11 @@ class Molecule(object):
                 TorsionsVariable.append(A)
 
             else:
-                
+
                 improper = False
 
                 additionalsIndex = i - len(zmatTorsionInfoVariables)
-                if additionalsIndex >= len(zmatTorsionInfoAditional):
-                    # Optional debug print
-                    print(f"[WARN] Skipping malformed additional torsion at index {i}")
-                    continue
+                
                 torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][2])
                 torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][1])
                 torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][0])
