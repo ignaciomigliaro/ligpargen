@@ -708,9 +708,10 @@ class Molecule(object):
                     # Optional debug print
                     print(f"[WARN] Skipping malformed additional torsion at index {i}")
                     continue
-                torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][2])
-                torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][1])
-                torsionF.insert(1,zmatTorsionInfoAditional[additionalsIndex][0])
+                # Replace the first four indices with the proper additional torsion atoms
+                atoms_add = zmatTorsionInfoAditional[additionalsIndex][:3]
+                torsionF[1:1] = atoms_add  # inserts them in correct order (A, B, C)
+
 
                 atomA = atoms[serial2IndexAtoms[int(torsionF[1])]]
                 atomB = atoms[serial2IndexAtoms[int(torsionF[2])]]
